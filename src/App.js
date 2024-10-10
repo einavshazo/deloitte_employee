@@ -1,11 +1,11 @@
 import './App.css';
-import SearchComponent from './SearchComponent';
+import SearchComponent from './components/SearchComponent/SearchComponent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchComponent/>
+        <SearchComponent />
       </header>
     </div>
   );

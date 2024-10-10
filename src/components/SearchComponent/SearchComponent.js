@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Autocomplete from './Autocomplete';
-import { fetchAutocompleteResults } from './autocompleteService.js';
+import Autocomplete from '../Autocomplete/Autocomplete';
+import { fetchAutocompleteResults } from '../../services/autocompleteService.js';
 import './SearchComponent.css';
 
 const SearchComponent = () => {

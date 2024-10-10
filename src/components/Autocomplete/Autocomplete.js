@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAutocompleteResults } from './autocompleteService';
+import { fetchAutocompleteResults } from '../../services/autocompleteService';
 import './Autocomplete.css'; 
 
 const Autocomplete = ({ query, setQuery }) => {
