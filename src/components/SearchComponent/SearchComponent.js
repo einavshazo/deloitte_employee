@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Autocomplete from '../Autocomplete/Autocomplete';
-//import { fetchAutocompleteResults } from '../../services/autocompleteService.js';
 import './SearchComponent.css';
 
 const SearchComponent = () => {
@@ -14,17 +13,6 @@ const SearchComponent = () => {
       console.error('Query is empty');
       return;  //If the input is empty, do not search
     }
-    
-    //try {
-      //const results = await fetchAutocompleteResults(query);
-      //console.log("results 1 " + results.Name);
-      //setSearchResults(results);
-      //console.log("results 2 " + results);
-      //console.log("query " + query);
-      //setSearchExecuted(true);
-    //} catch (error) {
-      //console.error('Error fetching search results:', error);
-    //}
   };
 
   return (
