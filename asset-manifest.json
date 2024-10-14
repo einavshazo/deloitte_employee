@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/deloitte_employee/static/css/main.9e77849a.css",
+    "main.js": "/deloitte_employee/static/js/main.b28f2d93.js",
+    "static/js/453.517ea5c6.chunk.js": "/deloitte_employee/static/js/453.517ea5c6.chunk.js",
+    "index.html": "/deloitte_employee/index.html",
+    "main.9e77849a.css.map": "/deloitte_employee/static/css/main.9e77849a.css.map",
+    "main.b28f2d93.js.map": "/deloitte_employee/static/js/main.b28f2d93.js.map",
+    "453.517ea5c6.chunk.js.map": "/deloitte_employee/static/js/453.517ea5c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e77849a.css",
+    "static/js/main.b28f2d93.js"
+  ]
+}
