@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Autocomplete from '../Autocomplete/Autocomplete';
-import { fetchAutocompleteResults } from '../../services/autocompleteService.js';
+//import { fetchAutocompleteResults } from '../../services/autocompleteService.js';
 import './SearchComponent.css';
 
 const SearchComponent = () => {
@@ -8,22 +8,23 @@ const SearchComponent = () => {
   const [searchResults, setSearchResults] = useState([]);  //array of results
   const [searchExecuted, setSearchExecuted] = useState(false); //Status management if the search done
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
+    setSearchExecuted(true);
     if (query.trim() === '') {
       console.error('Query is empty');
       return;  //If the input is empty, do not search
     }
     
-    try {
-      const results = await fetchAutocompleteResults(query);
-      console.log("results 1 " + results.Name);
-      setSearchResults(results);
-      console.log("results 2 " + results);
-      console.log("query " + query);
-      setSearchExecuted(true);
-    } catch (error) {
-      console.error('Error fetching search results:', error);
-    }
+    //try {
+      //const results = await fetchAutocompleteResults(query);
+      //console.log("results 1 " + results.Name);
+      //setSearchResults(results);
+      //console.log("results 2 " + results);
+      //console.log("query " + query);
+      //setSearchExecuted(true);
+    //} catch (error) {
+      //console.error('Error fetching search results:', error);
+    //}
   };
 
   return (
@@ -36,7 +37,7 @@ const SearchComponent = () => {
       </div>
 
       {/* The search and the result*/}
-      <Autocomplete query={query} setQuery={setQuery} />
+      <Autocomplete query={query} setQuery={setQuery} setSearchResults={setSearchResults} />
       <button onClick={handleSearch}>Search</button>
 
       {/* The title of the result after the search*/}

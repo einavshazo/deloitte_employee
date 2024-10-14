@@ -2,23 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { fetchAutocompleteResults } from '../../services/autocompleteService';
 import './Autocomplete.css'; 
 
-const Autocomplete = ({ query, setQuery }) => {
+const Autocomplete = ({ query, setQuery, setSearchResults }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   useEffect(() => {
     const loadSuggestions = async () => {
       if (query.length >= 2) {
-        const results = await fetchAutocompleteResults(query);
-        setSuggestions(results);
-        setShowSuggestions(true);
+        try {
+          const results = await fetchAutocompleteResults(query);
+          setSuggestions(results);
+          setShowSuggestions(true);
+          setSearchResults(results); // Pass results to SearchComponent
+        } catch (error) {
+          console.error('Error fetching suggestions:', error);
+          setSuggestions([]);
+          setSearchResults([]);
+        }
       } else {
         setSuggestions([]);
         setShowSuggestions(false);
+        setSearchResults([]);
       }
     };
     loadSuggestions();
-  }, [query]);
+  }, [query, setSearchResults]);
 
   const handleInputChange = (e) => {
     setQuery(e.target.value); // Update query in every change of the input
